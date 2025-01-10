@@ -33,6 +33,18 @@ Widget itemOfUserMessage(MessageModel message) {
                   fontSize: 16,
                 ),
               ),
+              (message.base64 != null && message.base64!.isNotEmpty)
+                  ? Container(
+                      margin: EdgeInsets.only(top: 10),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10),
+                        child: Image.memory(
+                          base64Decode(message.base64!),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    )
+                  : SizedBox.shrink(),
             ],
           ),
         ),

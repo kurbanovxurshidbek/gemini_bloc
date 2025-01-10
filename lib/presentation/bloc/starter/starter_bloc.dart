@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ngdemo29/presentation/bloc/home/home_bloc.dart';
+import 'package:ngdemo29/presentation/bloc/home/picker_bloc.dart';
 import 'package:ngdemo29/presentation/bloc/starter/starter_event.dart';
 import 'package:ngdemo29/presentation/bloc/starter/starter_state.dart';
 import 'package:ngdemo29/presentation/pages/home_page.dart';
@@ -37,6 +38,7 @@ class StarterBloc extends Bloc<StarterEvent, StarterState>{
       return MultiBlocProvider(
         providers: [
           BlocProvider(create: (context) => HomeBloc()),
+          BlocProvider(create: (context) => PickerBloc()),
         ],
         child: HomePage(),
       );
